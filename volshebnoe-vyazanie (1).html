@@ -1,0 +1,404 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Волшебное вязание — Safe Space</title><style>
+:root{--plum:#35233f;--violet:#654676;--paper:#e8dcc2;--ink:#31203f;--muted:#706575;--line:#cdbd9f;--cream:#f0e7d3}
+*{box-sizing:border-box}body{margin:0;background:transparent;color:var(--ink);font:16px/1.55 Georgia,"Times New Roman",serif}button,textarea{font:inherit}button{cursor:pointer}img{max-width:100%;display:block}a{color:inherit}button:focus-visible,summary:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #ae8640;outline-offset:4px}[hidden]{display:none!important}
+.page{width:min(1120px,calc(100% - 32px));margin:24px auto;padding:clamp(20px,4vw,48px);border:1px solid #8c788c;border-radius:28px;background:var(--plum)}.hero{text-align:center;color:var(--cream);margin:4px 0 26px}.eyebrow{font:11px/1.4 Arial,sans-serif;text-transform:uppercase;letter-spacing:.22em;color:#c9b7d3;margin:0 0 8px}h1{font-size:clamp(30px,5vw,48px);font-weight:400;line-height:1.12;margin:0 0 12px}.intro{max-width:650px;margin:0 auto;color:#d0c0d1;font-size:15px}.intro em{color:var(--cream)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#271a30;border-radius:16px;padding:8px}.tab{border:0;border-radius:10px;background:#dfcfaa;color:#3f3029;min-height:48px;padding:12px;font-weight:bold;font-size:15px}.tab[aria-selected=true]{background:var(--violet);color:#fff8e8}.tab:hover{filter:brightness(1.08)}.section{padding-top:26px}.filters{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:30px}.filter{border:1px solid #8f759a;border-radius:6px;padding:6px 10px;color:#e6dce9;background:transparent;font:13px/1.3 Arial,sans-serif;min-height:34px}.filter[aria-pressed=true]{color:#35233f;background:#e8dcc2;border-color:#e8dcc2}.category+.category{margin-top:38px}.category h2{display:flex;align-items:center;gap:14px;color:var(--cream);margin:0;font-size:23px;text-align:center;font-weight:400;line-height:1.25}.category h2:before,.category h2:after{content:"";height:1px;background:#77677a;flex:1}.requirement{text-align:center;font:italic 13px/1.5 Arial,sans-serif;color:#cbbbd1;margin:8px 0 36px}.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:42px 14px}.card{min-width:0;position:relative;background:var(--paper);border:1px solid #d7c8ac;border-radius:18px}.card[open]{grid-column:span 3}.card summary{min-height:242px;display:flex;flex-direction:column;align-items:center;gap:7px;padding:0 12px 18px;list-style:none;text-align:center;cursor:pointer}.card summary::-webkit-details-marker{display:none}.card summary img{height:150px;width:150px;object-fit:contain;margin-top:-26px}.item-no{font:11px/1.2 Arial,sans-serif;color:#80673d;letter-spacing:.12em}.item-name{font-weight:bold;font-size:15px;line-height:1.3}.description{font:italic 12px/1.45 Arial,sans-serif;color:#766c72}.hint{font:11px/1.3 Arial,sans-serif;color:#71557d;margin-top:auto;padding-top:8px}.card[open] .hint{display:none}.code-panel{padding:16px;border-top:1px solid var(--line);background:#eee9dc;border-radius:0 0 18px 18px}.code-panel .cost{font:13px/1.5 Arial,sans-serif;margin:0 0 12px}.code-label{display:block;font:12px Arial,sans-serif;margin:0 0 8px;color:#6f5978}textarea{display:block;width:100%;height:220px;resize:vertical;padding:12px;border:1px solid var(--line);border-radius:8px;background:#fffdf7;color:#352d40;font:12px/1.6 Consolas,monospace;white-space:pre;overflow:auto}.copy{display:block;width:100%;min-height:44px;margin-top:10px;padding:10px 12px;border:0;border-radius:8px;background:var(--violet);color:#fff8e8;font:700 13px/1.4 Arial,sans-serif}.copy:hover{background:#7c598d}.zoom{display:block;border:0;background:transparent;color:#71557d;font:12px/1.4 Arial,sans-serif;padding:9px 4px;margin:auto;text-decoration:underline;text-underline-offset:3px}.tasks-intro{color:#cbbbd1;text-align:center;margin:0 0 22px;font:italic 14px/1.5 Arial,sans-serif}.yarns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.yarn{background:var(--paper);border:1px solid #d7c8ac;border-radius:18px;overflow:hidden}.yarn h2{font-size:23px;font-weight:400;margin:0;padding:22px 18px 16px;border-bottom:1px solid var(--line)}.yarn .level{display:block;font:10px/1.4 Arial,sans-serif;text-transform:uppercase;letter-spacing:.15em;color:#80673d;margin-bottom:5px}.yarn ol{margin:0;padding:18px 22px 24px 38px;font:14px/1.6 Arial,sans-serif}.yarn li+li{margin-top:14px}.yarn a{color:#684775;text-decoration:underline;text-underline-offset:3px}.note{font:12px/1.5 Arial,sans-serif;color:#cbbbd1;text-align:center;margin:24px 0 0}.status{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:12px 18px;border:1px solid #cbb8d2;border-radius:10px;background:#eee9dc;color:#35233f;max-width:calc(100% - 24px);z-index:100;font:14px/1.4 Arial,sans-serif}.status:empty{display:none}dialog{width:min(600px,calc(100% - 32px));max-height:90vh;padding:20px;border:1px solid #bda883;border-radius:20px;background:#eee9dc;color:#35233f}dialog::backdrop{background:#160e20c7}dialog img{width:100%;height:60vh;object-fit:contain}dialog h2{font-size:22px;margin:0;text-align:center}dialog button{display:block;margin:12px 0 0 auto;border:0;border-radius:8px;padding:10px 16px;background:var(--violet);color:#fff8e8;font:14px Arial,sans-serif}noscript p{color:#fff8e8;text-align:center}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.card[open]{grid-column:1/-1}.yarns{grid-template-columns:1fr}.yarn h2{font-size:22px}.yarn ol{columns:2;column-gap:36px}.yarn li{break-inside:avoid}.yarn li+li{margin-top:12px}}
+@media(max-width:600px){.page{width:100%;margin:0;border-radius:0;padding:24px 14px 36px}.hero{margin-bottom:22px}.intro{font-size:14px}.tabs{gap:6px;padding:6px}.tab{padding:10px 6px;font-size:13px}.filters{gap:6px;margin-bottom:26px}.filter{font-size:12px;padding:6px 8px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 10px}.card summary{min-height:221px;padding:0 10px 14px}.card summary img{width:125px;height:125px;margin-top:-22px}.item-name{font-size:14px}.description{font-size:11px}.category h2{font-size:22px}.requirement{font-size:12px;margin-bottom:32px}.code-panel{padding:12px}.yarn ol{columns:1}.yarn h2{padding:18px 20px 14px}.yarn li+li{margin-top:13px}textarea{font-size:12px}.section{padding-top:22px}}
+@media(prefers-reduced-motion:no-preference){button{transition:background .15s ease}}
+
+.yarn-visual{display:flex;align-items:center;justify-content:center;width:100%;height:190px;padding:16px 16px 4px;border:0;background:transparent;border-radius:18px 18px 0 0}.yarn-visual img{display:block;width:170px;height:170px;object-fit:contain}.yarn h2{padding-top:8px;text-align:center}
+</style></head><body><main class="page"><header class="hero"><p class="eyebrow">MARAUDERS · SAFE SPACE</p><h1>Волшебное вязание</h1><p class="intro">Выполняйте задания, получайте клубочки и пишите посты.<br><em>Выберите, что свяжете сегодня.</em></p></header><nav class="tabs" role="tablist" aria-label="Разделы вязания"><button class="tab" id="tab-items" type="button" role="tab" aria-selected="true" aria-controls="panel-items" tabindex="0">Вязаные вещи</button><button class="tab" id="tab-yarns" type="button" role="tab" aria-selected="false" aria-controls="panel-yarns" tabindex="-1">Клубочки и задания</button></nav><section class="section" id="panel-items" role="tabpanel" aria-labelledby="tab-items"><div class="filters" aria-label="Категории вещей"><button class="filter" type="button" data-filter="all" aria-pressed="true">Все вещи · 46</button>
+<button class="filter" type="button" data-filter="0" aria-pressed="false">Один носок</button>
+<button class="filter" type="button" data-filter="1" aria-pressed="false">Пара носков</button>
+<button class="filter" type="button" data-filter="2" aria-pressed="false">Шапки</button>
+<button class="filter" type="button" data-filter="3" aria-pressed="false">Шарфики</button>
+<button class="filter" type="button" data-filter="4" aria-pressed="false">Свитеры</button>
+<button class="filter" type="button" data-filter="5" aria-pressed="false">Пледы</button>
+<button class="filter" type="button" data-filter="6" aria-pressed="false">Игрушки</button>
+</div>
+<section class="category" data-category="0" aria-labelledby="category-0"><h2 id="category-0">Одинокий носок без пары</h2><p class="requirement">Потребуется маленький клубочек и один пост</p><div class="grid">
+<details class="card" id="item-0-1"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t74056.png" alt="Дикий лесной носок" loading="lazy" width="150" height="150"><span class="item-no">№ 01</span><span class="item-name">Дикий лесной носок</span><span class="description">Осторожно! Он дикий</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется маленький клубочек и один пост</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t74056.png" data-name="Дикий лесной носок">Рассмотреть картинку</button><label class="code-label" for="code-0-1">Шаблон для сообщения на форуме</label><textarea id="code-0-1" readonly spellcheck="false">Я вяжу одинокий носок номер 1!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-0-1">Скопировать BBCode</button></div></details>
+<details class="card" id="item-0-2"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t952505.png" alt="Носок зельевара" loading="lazy" width="150" height="150"><span class="item-no">№ 02</span><span class="item-name">Носок зельевара</span><span class="description">Котлы на носке бурлят</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется маленький клубочек и один пост</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t952505.png" data-name="Носок зельевара">Рассмотреть картинку</button><label class="code-label" for="code-0-2">Шаблон для сообщения на форуме</label><textarea id="code-0-2" readonly spellcheck="false">Я вяжу одинокий носок номер 2!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-0-2">Скопировать BBCode</button></div></details>
+<details class="card" id="item-0-3"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t181059.png" alt="Носок-снежок" loading="lazy" width="150" height="150"><span class="item-no">№ 03</span><span class="item-name">Носок-снежок</span><span class="description">Мягкий, как снежок</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется маленький клубочек и один пост</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t181059.png" data-name="Носок-снежок">Рассмотреть картинку</button><label class="code-label" for="code-0-3">Шаблон для сообщения на форуме</label><textarea id="code-0-3" readonly spellcheck="false">Я вяжу одинокий носок номер 3!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-0-3">Скопировать BBCode</button></div></details>
+<details class="card" id="item-0-4"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t832378.png" alt="Рождественский носок" loading="lazy" width="150" height="150"><span class="item-no">№ 04</span><span class="item-name">Рождественский носок</span><span class="description">Джингл-беллз</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется маленький клубочек и один пост</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t832378.png" data-name="Рождественский носок">Рассмотреть картинку</button><label class="code-label" for="code-0-4">Шаблон для сообщения на форуме</label><textarea id="code-0-4" readonly spellcheck="false">Я вяжу одинокий носок номер 4!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-0-4">Скопировать BBCode</button></div></details>
+<details class="card" id="item-0-5"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t818410.png" alt="Звёздный носок" loading="lazy" width="150" height="150"><span class="item-no">№ 05</span><span class="item-name">Звёздный носок</span><span class="description">Одинок, как падающая звезда</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется маленький клубочек и один пост</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t818410.png" data-name="Звёздный носок">Рассмотреть картинку</button><label class="code-label" for="code-0-5">Шаблон для сообщения на форуме</label><textarea id="code-0-5" readonly spellcheck="false">Я вяжу одинокий носок номер 5!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-0-5">Скопировать BBCode</button></div></details>
+<details class="card" id="item-0-6"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t348842.png" alt="Носок из Сладкого королевства" loading="lazy" width="150" height="150"><span class="item-no">№ 06</span><span class="item-name">Носок из Сладкого королевства</span><span class="description">Там что, и носки продают?</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется маленький клубочек и один пост</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t348842.png" data-name="Носок из Сладкого королевства">Рассмотреть картинку</button><label class="code-label" for="code-0-6">Шаблон для сообщения на форуме</label><textarea id="code-0-6" readonly spellcheck="false">Я вяжу одинокий носок номер 6!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-0-6">Скопировать BBCode</button></div></details>
+</div></section>
+<section class="category" data-category="1" aria-labelledby="category-1"><h2 id="category-1">Пара носков</h2><p class="requirement">Потребуется два маленьких клубочка и два поста</p><div class="grid">
+<details class="card" id="item-1-1"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t532862.png" alt="Зимние носки" loading="lazy" width="150" height="150"><span class="item-no">№ 01</span><span class="item-name">Зимние носки</span><span class="description">В них тепло даже в мороз</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два маленьких клубочка и два поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t532862.png" data-name="Зимние носки">Рассмотреть картинку</button><label class="code-label" for="code-1-1">Шаблон для сообщения на форуме</label><textarea id="code-1-1" readonly spellcheck="false">Я вяжу пару носков номер 1!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Ещё маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-1-1">Скопировать BBCode</button></div></details>
+<details class="card" id="item-1-2"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t970900.png" alt="Мрачные носки" loading="lazy" width="150" height="150"><span class="item-no">№ 02</span><span class="item-name">Мрачные носки</span><span class="description">Для особых мрачных дней</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два маленьких клубочка и два поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t970900.png" data-name="Мрачные носки">Рассмотреть картинку</button><label class="code-label" for="code-1-2">Шаблон для сообщения на форуме</label><textarea id="code-1-2" readonly spellcheck="false">Я вяжу пару носков номер 2!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Ещё маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-1-2">Скопировать BBCode</button></div></details>
+<details class="card" id="item-1-3"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t98372.png" alt="Колдовские носки" loading="lazy" width="150" height="150"><span class="item-no">№ 03</span><span class="item-name">Колдовские носки</span><span class="description">Мурчат, если потереть ногу ногой</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два маленьких клубочка и два поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t98372.png" data-name="Колдовские носки">Рассмотреть картинку</button><label class="code-label" for="code-1-3">Шаблон для сообщения на форуме</label><textarea id="code-1-3" readonly spellcheck="false">Я вяжу пару носков номер 3!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Ещё маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-1-3">Скопировать BBCode</button></div></details>
+<details class="card" id="item-1-4"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t66783.png" alt="Носки из Сладкого королевства" loading="lazy" width="150" height="150"><span class="item-no">№ 04</span><span class="item-name">Носки из Сладкого королевства</span><span class="description">Не пытайтесь их съесть!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два маленьких клубочка и два поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t66783.png" data-name="Носки из Сладкого королевства">Рассмотреть картинку</button><label class="code-label" for="code-1-4">Шаблон для сообщения на форуме</label><textarea id="code-1-4" readonly spellcheck="false">Я вяжу пару носков номер 4!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Ещё маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-1-4">Скопировать BBCode</button></div></details>
+<details class="card" id="item-1-5"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t747383.png" alt="Зельеварческие носки" loading="lazy" width="150" height="150"><span class="item-no">№ 05</span><span class="item-name">Зельеварческие носки</span><span class="description">Надень и стань прекрасным зельеваром!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два маленьких клубочка и два поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t747383.png" data-name="Зельеварческие носки">Рассмотреть картинку</button><label class="code-label" for="code-1-5">Шаблон для сообщения на форуме</label><textarea id="code-1-5" readonly spellcheck="false">Я вяжу пару носков номер 5!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Ещё маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-1-5">Скопировать BBCode</button></div></details>
+<details class="card" id="item-1-6"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t34397.png" alt="Носки с совами" loading="lazy" width="150" height="150"><span class="item-no">№ 06</span><span class="item-name">Носки с совами</span><span class="description">Иногда ухают...</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два маленьких клубочка и два поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t34397.png" data-name="Носки с совами">Рассмотреть картинку</button><label class="code-label" for="code-1-6">Шаблон для сообщения на форуме</label><textarea id="code-1-6" readonly spellcheck="false">Я вяжу пару носков номер 6!
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Ещё маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-1-6">Скопировать BBCode</button></div></details>
+</div></section>
+<section class="category" data-category="2" aria-labelledby="category-2"><h2 id="category-2">Шапки</h2><p class="requirement">Потребуется средний клубочек и три поста</p><div class="grid">
+<details class="card" id="item-2-1"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t878328.png" alt="Грибная шапочка" loading="lazy" width="150" height="150"><span class="item-no">№ 01</span><span class="item-name">Грибная шапочка</span><span class="description">Вас могут принять за гриб</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек и три поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t878328.png" data-name="Грибная шапочка">Рассмотреть картинку</button><label class="code-label" for="code-2-1">Шаблон для сообщения на форуме</label><textarea id="code-2-1" readonly spellcheck="false">Я вяжу шапку номер 1!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-2-1">Скопировать BBCode</button></div></details>
+<details class="card" id="item-2-2"><summary><img src="https://upforme.ru/uploads/001c/7d/92/2/234240.png" alt="Шапка-мантикора" loading="lazy" width="150" height="150"><span class="item-no">№ 02</span><span class="item-name">Шапка-мантикора</span><span class="description">Р-р-ррычит!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек и три поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/2/234240.png" data-name="Шапка-мантикора">Рассмотреть картинку</button><label class="code-label" for="code-2-2">Шаблон для сообщения на форуме</label><textarea id="code-2-2" readonly spellcheck="false">Я вяжу шапку номер 2!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-2-2">Скопировать BBCode</button></div></details>
+<details class="card" id="item-2-3"><summary><img src="https://upforme.ru/uploads/001c/7d/92/2/662773.png" alt="Шапка-клабберт" loading="lazy" width="150" height="150"><span class="item-no">№ 03</span><span class="item-name">Шапка-клабберт</span><span class="description">Это лягушка? Это обезьяна? Это клабберт!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек и три поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/2/662773.png" data-name="Шапка-клабберт">Рассмотреть картинку</button><label class="code-label" for="code-2-3">Шаблон для сообщения на форуме</label><textarea id="code-2-3" readonly spellcheck="false">Я вяжу шапку номер 3!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-2-3">Скопировать BBCode</button></div></details>
+<details class="card" id="item-2-4"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t898080.png" alt="Лесная шапка" loading="lazy" width="150" height="150"><span class="item-no">№ 04</span><span class="item-name">Лесная шапка</span><span class="description">Слушай шёпот леса...</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек и три поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t898080.png" data-name="Лесная шапка">Рассмотреть картинку</button><label class="code-label" for="code-2-4">Шаблон для сообщения на форуме</label><textarea id="code-2-4" readonly spellcheck="false">Я вяжу шапку номер 4!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-2-4">Скопировать BBCode</button></div></details>
+<details class="card" id="item-2-5"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t998283.png" alt="Причудливая шапка" loading="lazy" width="150" height="150"><span class="item-no">№ 05</span><span class="item-name">Причудливая шапка</span><span class="description">Для самых экстраординарных</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек и три поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t998283.png" data-name="Причудливая шапка">Рассмотреть картинку</button><label class="code-label" for="code-2-5">Шаблон для сообщения на форуме</label><textarea id="code-2-5" readonly spellcheck="false">Я вяжу шапку номер 5!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-2-5">Скопировать BBCode</button></div></details>
+<details class="card" id="item-2-6"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t577111.png" alt="Драконья шапка" loading="lazy" width="150" height="150"><span class="item-no">№ 06</span><span class="item-name">Драконья шапка</span><span class="description">Может дымиться, когда дракон чихает!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек и три поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t577111.png" data-name="Драконья шапка">Рассмотреть картинку</button><label class="code-label" for="code-2-6">Шаблон для сообщения на форуме</label><textarea id="code-2-6" readonly spellcheck="false">Я вяжу шапку номер 6!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-2-6">Скопировать BBCode</button></div></details>
+</div></section>
+<section class="category" data-category="3" aria-labelledby="category-3"><h2 id="category-3">Шарфики</h2><p class="requirement">Потребуется средний клубочек, маленький клубочек и четыре поста</p><div class="grid">
+<details class="card" id="item-3-1"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t383067.png" alt="Небесный шарф" loading="lazy" width="150" height="150"><span class="item-no">№ 01</span><span class="item-name">Небесный шарф</span><span class="description">Лёгкий, как пёрышко</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек, маленький клубочек и четыре поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t383067.png" data-name="Небесный шарф">Рассмотреть картинку</button><label class="code-label" for="code-3-1">Шаблон для сообщения на форуме</label><textarea id="code-3-1" readonly spellcheck="false">Я вяжу шарфик номер 1!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-3-1">Скопировать BBCode</button></div></details>
+<details class="card" id="item-3-2"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t606497.png" alt="Шарф для зимних ночей" loading="lazy" width="150" height="150"><span class="item-no">№ 02</span><span class="item-name">Шарф для зимних ночей</span><span class="description">В нём тепло даже ночью</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек, маленький клубочек и четыре поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t606497.png" data-name="Шарф для зимних ночей">Рассмотреть картинку</button><label class="code-label" for="code-3-2">Шаблон для сообщения на форуме</label><textarea id="code-3-2" readonly spellcheck="false">Я вяжу шарфик номер 2!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-3-2">Скопировать BBCode</button></div></details>
+<details class="card" id="item-3-3"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t642889.png" alt="Олений шарф" loading="lazy" width="150" height="150"><span class="item-no">№ 03</span><span class="item-name">Олений шарф</span><span class="description">В нём легче наколдовать патронус!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек, маленький клубочек и четыре поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t642889.png" data-name="Олений шарф">Рассмотреть картинку</button><label class="code-label" for="code-3-3">Шаблон для сообщения на форуме</label><textarea id="code-3-3" readonly spellcheck="false">Я вяжу шарфик номер 3!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-3-3">Скопировать BBCode</button></div></details>
+<details class="card" id="item-3-4"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t658895.png" alt="Драконий шарф" loading="lazy" width="150" height="150"><span class="item-no">№ 04</span><span class="item-name">Драконий шарф</span><span class="description">На нём начертаны древние руны</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек, маленький клубочек и четыре поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t658895.png" data-name="Драконий шарф">Рассмотреть картинку</button><label class="code-label" for="code-3-4">Шаблон для сообщения на форуме</label><textarea id="code-3-4" readonly spellcheck="false">Я вяжу шарфик номер 4!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-3-4">Скопировать BBCode</button></div></details>
+<details class="card" id="item-3-5"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t463265.png" alt="Шарф с привидениями" loading="lazy" width="150" height="150"><span class="item-no">№ 05</span><span class="item-name">Шарф с привидениями</span><span class="description">Хэллоуин не кончается никогда...</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек, маленький клубочек и четыре поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t463265.png" data-name="Шарф с привидениями">Рассмотреть картинку</button><label class="code-label" for="code-3-5">Шаблон для сообщения на форуме</label><textarea id="code-3-5" readonly spellcheck="false">Я вяжу шарфик номер 5!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-3-5">Скопировать BBCode</button></div></details>
+<details class="card" id="item-3-6"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t915506.png" alt="Шарф из разноцветных кусочков" loading="lazy" width="150" height="150"><span class="item-no">№ 06</span><span class="item-name">Шарф из разноцветных кусочков</span><span class="description">Яркий шарф для ярких волшебников</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется средний клубочек, маленький клубочек и четыре поста</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t915506.png" data-name="Шарф из разноцветных кусочков">Рассмотреть картинку</button><label class="code-label" for="code-3-6">Шаблон для сообщения на форуме</label><textarea id="code-3-6" readonly spellcheck="false">Я вяжу шарфик номер 6!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-3-6">Скопировать BBCode</button></div></details>
+</div></section>
+<section class="category" data-category="4" aria-labelledby="category-4"><h2 id="category-4">Свитеры</h2><p class="requirement">Потребуется два средних клубочка и пять постов</p><div class="grid">
+<details class="card" id="item-4-1"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t217320.png" alt="Драконий свитер" loading="lazy" width="150" height="150"><span class="item-no">№ 01</span><span class="item-name">Драконий свитер</span><span class="description">Согревает, как пламя дракона</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два средних клубочка и пять постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t217320.png" data-name="Драконий свитер">Рассмотреть картинку</button><label class="code-label" for="code-4-1">Шаблон для сообщения на форуме</label><textarea id="code-4-1" readonly spellcheck="false">Я вяжу свитер номер 1!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-4-1">Скопировать BBCode</button></div></details>
+<details class="card" id="item-4-2"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t516420.png" alt="Свитер с рукавами-бабочками" loading="lazy" width="150" height="150"><span class="item-no">№ 02</span><span class="item-name">Свитер с рукавами-бабочками</span><span class="description">Связан из самой лёгкой пряжи</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два средних клубочка и пять постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t516420.png" data-name="Свитер с рукавами-бабочками">Рассмотреть картинку</button><label class="code-label" for="code-4-2">Шаблон для сообщения на форуме</label><textarea id="code-4-2" readonly spellcheck="false">Я вяжу свитер номер 2!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-4-2">Скопировать BBCode</button></div></details>
+<details class="card" id="item-4-3"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t307009.png" alt="Свитер домашний" loading="lazy" width="150" height="150"><span class="item-no">№ 03</span><span class="item-name">Свитер домашний</span><span class="description">Греет, как домашний огонёк</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два средних клубочка и пять постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t307009.png" data-name="Свитер домашний">Рассмотреть картинку</button><label class="code-label" for="code-4-3">Шаблон для сообщения на форуме</label><textarea id="code-4-3" readonly spellcheck="false">Я вяжу свитер номер 3!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-4-3">Скопировать BBCode</button></div></details>
+<details class="card" id="item-4-4"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t573892.png" alt="Свитер-облачко" loading="lazy" width="150" height="150"><span class="item-no">№ 04</span><span class="item-name">Свитер-облачко</span><span class="description">Нежный, как облачко</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два средних клубочка и пять постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t573892.png" data-name="Свитер-облачко">Рассмотреть картинку</button><label class="code-label" for="code-4-4">Шаблон для сообщения на форуме</label><textarea id="code-4-4" readonly spellcheck="false">Я вяжу свитер номер 4!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-4-4">Скопировать BBCode</button></div></details>
+<details class="card" id="item-4-5"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t862620.png" alt="Свитер зельевара" loading="lazy" width="150" height="150"><span class="item-no">№ 05</span><span class="item-name">Свитер зельевара</span><span class="description">Пахнет зельеварческими травами</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два средних клубочка и пять постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t862620.png" data-name="Свитер зельевара">Рассмотреть картинку</button><label class="code-label" for="code-4-5">Шаблон для сообщения на форуме</label><textarea id="code-4-5" readonly spellcheck="false">Я вяжу свитер номер 5!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-4-5">Скопировать BBCode</button></div></details>
+<details class="card" id="item-4-6"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t473653.png" alt="Лисий свитер" loading="lazy" width="150" height="150"><span class="item-no">№ 06</span><span class="item-name">Лисий свитер</span><span class="description">Тёплый, как лисья шубка</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется два средних клубочка и пять постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t473653.png" data-name="Лисий свитер">Рассмотреть картинку</button><label class="code-label" for="code-4-6">Шаблон для сообщения на форуме</label><textarea id="code-4-6" readonly spellcheck="false">Я вяжу свитер номер 6!
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-4-6">Скопировать BBCode</button></div></details>
+</div></section>
+<section class="category" data-category="5" aria-labelledby="category-5"><h2 id="category-5">Пледы</h2><p class="requirement">Потребуется большой клубочек, средний клубочек и шесть постов</p><div class="grid">
+<details class="card" id="item-5-1"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t822539.png" alt="Медовый плед" loading="lazy" width="150" height="150"><span class="item-no">№ 01</span><span class="item-name">Медовый плед</span><span class="description">Пахнет мёдом</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек и шесть постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t822539.png" data-name="Медовый плед">Рассмотреть картинку</button><label class="code-label" for="code-5-1">Шаблон для сообщения на форуме</label><textarea id="code-5-1" readonly spellcheck="false">Я вяжу плед номер 1!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-5-1">Скопировать BBCode</button></div></details>
+<details class="card" id="item-5-2"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t442144.png" alt="Грибной плед" loading="lazy" width="150" height="150"><span class="item-no">№ 02</span><span class="item-name">Грибной плед</span><span class="description">Грибы светятся в темноте и поют песни...</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек и шесть постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t442144.png" data-name="Грибной плед">Рассмотреть картинку</button><label class="code-label" for="code-5-2">Шаблон для сообщения на форуме</label><textarea id="code-5-2" readonly spellcheck="false">Я вяжу плед номер 2!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-5-2">Скопировать BBCode</button></div></details>
+<details class="card" id="item-5-3"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t70801.png" alt="Лёгкий плед" loading="lazy" width="150" height="150"><span class="item-no">№ 03</span><span class="item-name">Лёгкий плед</span><span class="description">Невесомый и пахнет цветами</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек и шесть постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t70801.png" data-name="Лёгкий плед">Рассмотреть картинку</button><label class="code-label" for="code-5-3">Шаблон для сообщения на форуме</label><textarea id="code-5-3" readonly spellcheck="false">Я вяжу плед номер 3!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-5-3">Скопировать BBCode</button></div></details>
+<details class="card" id="item-5-4"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/39040.png" alt="Плед-солнышко" loading="lazy" width="150" height="150"><span class="item-no">№ 04</span><span class="item-name">Плед-солнышко</span><span class="description">Особенно согревающий!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек и шесть постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/39040.png" data-name="Плед-солнышко">Рассмотреть картинку</button><label class="code-label" for="code-5-4">Шаблон для сообщения на форуме</label><textarea id="code-5-4" readonly spellcheck="false">Я вяжу плед номер 4!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-5-4">Скопировать BBCode</button></div></details>
+<details class="card" id="item-5-5"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t139084.png" alt="Сонный плед" loading="lazy" width="150" height="150"><span class="item-no">№ 05</span><span class="item-name">Сонный плед</span><span class="description">Под ним хорошо вздремнуть</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек и шесть постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t139084.png" data-name="Сонный плед">Рассмотреть картинку</button><label class="code-label" for="code-5-5">Шаблон для сообщения на форуме</label><textarea id="code-5-5" readonly spellcheck="false">Я вяжу плед номер 5!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-5-5">Скопировать BBCode</button></div></details>
+<details class="card" id="item-5-6"><summary><img src="https://upforme.ru/uploads/001c/7d/92/2/728302.png" alt="Цветочный плед" loading="lazy" width="150" height="150"><span class="item-no">№ 06</span><span class="item-name">Цветочный плед</span><span class="description">Пахнет терпкими цветами и вызывает чувство влюблённости</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек и шесть постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/2/728302.png" data-name="Цветочный плед">Рассмотреть картинку</button><label class="code-label" for="code-5-6">Шаблон для сообщения на форуме</label><textarea id="code-5-6" readonly spellcheck="false">Я вяжу плед номер 6!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-5-6">Скопировать BBCode</button></div></details>
+</div></section>
+<section class="category" data-category="6" aria-labelledby="category-6"><h2 id="category-6">Игрушки</h2><p class="requirement">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><div class="grid">
+<details class="card" id="item-6-1"><summary><img src="https://upforme.ru/uploads/001c/7d/92/2/102462.png" alt="Вязаный лунтелёнок" loading="lazy" width="150" height="150"><span class="item-no">№ 01</span><span class="item-name">Вязаный лунтелёнок</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/2/102462.png" data-name="Вязаный лунтелёнок">Рассмотреть картинку</button><label class="code-label" for="code-6-1">Шаблон для сообщения на форуме</label><textarea id="code-6-1" readonly spellcheck="false">Я вяжу игрушку номер 1!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-1">Скопировать BBCode</button></div></details>
+<details class="card" id="item-6-2"><summary><img src="https://upforme.ru/uploads/001c/7d/92/2/165664.png" alt="Вязаный авгурей" loading="lazy" width="150" height="150"><span class="item-no">№ 02</span><span class="item-name">Вязаный авгурей</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/2/165664.png" data-name="Вязаный авгурей">Рассмотреть картинку</button><label class="code-label" for="code-6-2">Шаблон для сообщения на форуме</label><textarea id="code-6-2" readonly spellcheck="false">Я вяжу игрушку номер 2!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-2">Скопировать BBCode</button></div></details>
+<details class="card" id="item-6-3"><summary><img src="https://upforme.ru/uploads/001c/7d/92/2/290331.png" alt="Вязаная демимаска" loading="lazy" width="150" height="150"><span class="item-no">№ 03</span><span class="item-name">Вязаная демимаска</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/2/290331.png" data-name="Вязаная демимаска">Рассмотреть картинку</button><label class="code-label" for="code-6-3">Шаблон для сообщения на форуме</label><textarea id="code-6-3" readonly spellcheck="false">Я вяжу игрушку номер 3!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-3">Скопировать BBCode</button></div></details>
+<details class="card" id="item-6-4"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t237606.png" alt="Вязаный оккамий" loading="lazy" width="150" height="150"><span class="item-no">№ 04</span><span class="item-name">Вязаный оккамий</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t237606.png" data-name="Вязаный оккамий">Рассмотреть картинку</button><label class="code-label" for="code-6-4">Шаблон для сообщения на форуме</label><textarea id="code-6-4" readonly spellcheck="false">Я вяжу игрушку номер 4!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-4">Скопировать BBCode</button></div></details>
+<details class="card" id="item-6-5"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t450427.png" alt="Вязаный гиппогриф" loading="lazy" width="150" height="150"><span class="item-no">№ 05</span><span class="item-name">Вязаный гиппогриф</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t450427.png" data-name="Вязаный гиппогриф">Рассмотреть картинку</button><label class="code-label" for="code-6-5">Шаблон для сообщения на форуме</label><textarea id="code-6-5" readonly spellcheck="false">Я вяжу игрушку номер 5!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-5">Скопировать BBCode</button></div></details>
+<details class="card" id="item-6-6"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t722920.png" alt="Вязаный единорог" loading="lazy" width="150" height="150"><span class="item-no">№ 06</span><span class="item-name">Вязаный единорог</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t722920.png" data-name="Вязаный единорог">Рассмотреть картинку</button><label class="code-label" for="code-6-6">Шаблон для сообщения на форуме</label><textarea id="code-6-6" readonly spellcheck="false">Я вяжу игрушку номер 6!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-6">Скопировать BBCode</button></div></details>
+<details class="card" id="item-6-7"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t842805.png" alt="Вязаный жмыр" loading="lazy" width="150" height="150"><span class="item-no">№ 07</span><span class="item-name">Вязаный жмыр</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t842805.png" data-name="Вязаный жмыр">Рассмотреть картинку</button><label class="code-label" for="code-6-7">Шаблон для сообщения на форуме</label><textarea id="code-6-7" readonly spellcheck="false">Я вяжу игрушку номер 7!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-7">Скопировать BBCode</button></div></details>
+<details class="card" id="item-6-8"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t121292.png" alt="Вязаный двурог" loading="lazy" width="150" height="150"><span class="item-no">№ 08</span><span class="item-name">Вязаный двурог</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t121292.png" data-name="Вязаный двурог">Рассмотреть картинку</button><label class="code-label" for="code-6-8">Шаблон для сообщения на форуме</label><textarea id="code-6-8" readonly spellcheck="false">Я вяжу игрушку номер 8!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-8">Скопировать BBCode</button></div></details>
+<details class="card" id="item-6-9"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t18399.png" alt="Вязаный акромантул" loading="lazy" width="150" height="150"><span class="item-no">№ 09</span><span class="item-name">Вязаный акромантул</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t18399.png" data-name="Вязаный акромантул">Рассмотреть картинку</button><label class="code-label" for="code-6-9">Шаблон для сообщения на форуме</label><textarea id="code-6-9" readonly spellcheck="false">Я вяжу игрушку номер 9!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-9">Скопировать BBCode</button></div></details>
+<details class="card" id="item-6-10"><summary><img src="https://upforme.ru/uploads/001c/7d/92/4/t711233.png" alt="Вязаный взрывопотам" loading="lazy" width="150" height="150"><span class="item-no">№ 10</span><span class="item-name">Вязаный взрывопотам</span><span class="description">Помогите, меня связали!</span><span class="hint">Открыть шаблон заявки ↓</span></summary><div class="code-panel"><p class="cost">Потребуется большой клубочек, средний клубочек, маленький клубочек и семь постов</p><button type="button" class="zoom" data-image="https://upforme.ru/uploads/001c/7d/92/4/t711233.png" data-name="Вязаный взрывопотам">Рассмотреть картинку</button><label class="code-label" for="code-6-10">Шаблон для сообщения на форуме</label><textarea id="code-6-10" readonly spellcheck="false">Я вяжу игрушку номер 10!
+[b]Большой клубочек:[/b] ссылка на выполненное задание
+[b]Средний клубочек:[/b] ссылка на выполненное задание
+[b]Маленький клубочек:[/b] ссылка на выполненное задание
+[b]Пост 1:[/b] ссылка на пост
+[b]Пост 2:[/b] ссылка на пост
+[b]Пост 3:[/b] ссылка на пост
+[b]Пост 4:[/b] ссылка на пост
+[b]Пост 5:[/b] ссылка на пост
+[b]Пост 6:[/b] ссылка на пост
+[b]Пост 7:[/b] ссылка на пост</textarea><button class="copy" type="button" data-copy="code-6-10">Скопировать BBCode</button></div></details>
+</div></section>
+</section><section class="section" id="panel-yarns" role="tabpanel" aria-labelledby="tab-yarns" hidden><p class="tasks-intro">Чтобы взять клубочек, выполните одно любое задание из его списка.</p><div class="yarns">
+<article class="yarn"><div class="yarn-visual"><img src="https://upforme.ru/uploads/001c/7d/92/4/t607714.png" alt="Маленький клубочек" width="170" height="170" loading="lazy"></div><h2><span class="level">Одно задание на выбор</span>Маленький клубочек</h2><ol>
+<li>Подарить кому-то подарок</li>
+<li>Записаться в <a href="https://safespace.rusff.me/viewtopic.php?id=1329" target="_blank" rel="noopener noreferrer">ставки недели</a></li>
+<li>Принести <a href="https://safespace.rusff.me/viewtopic.php?id=113" target="_blank" rel="noopener noreferrer">цитату</a> соигрока</li>
+<li>Принести <a href="https://safespace.rusff.me/viewtopic.php?id=442" target="_blank" rel="noopener noreferrer">благодарность</a> в тему с благодарностями</li>
+<li>Собрать <a href="https://safespace.rusff.me/viewtopic.php?id=45" target="_blank" rel="noopener noreferrer">паззл</a>, который ещё не собирал</li>
+<li>Поцеловать кого-то в <a href="https://safespace.rusff.me/viewforum.php?id=7" target="_blank" rel="noopener noreferrer">бутылочке</a></li>
+</ol></article>
+<article class="yarn"><div class="yarn-visual"><img src="https://upforme.ru/uploads/001c/7d/92/4/t805024.png" alt="Средний клубочек" width="170" height="170" loading="lazy"></div><h2><span class="level">Одно задание на выбор</span>Средний клубочек</h2><ol>
+<li>Поспорить с кем-то в <a href="https://safespace.rusff.me/viewtopic.php?id=1329" target="_blank" rel="noopener noreferrer">гоблинском доме</a></li>
+<li>Съесть конфетку <a href="https://safespace.rusff.me/viewtopic.php?id=1325" target="_blank" rel="noopener noreferrer">Берти Боттс</a></li>
+<li>Ответить на вопрос в <a href="https://safespace.rusff.me/viewtopic.php?id=1160" target="_blank" rel="noopener noreferrer">дискуссионном клубе</a></li>
+<li>Собрать <a href="https://safespace.rusff.me/viewtopic.php?id=1312" target="_blank" rel="noopener noreferrer">коллаж</a> про своего или чужого персонажа</li>
+<li>Кинуть куб в посте, который на что-то повлияет</li>
+<li>Сыграть под маской</li>
+</ol></article>
+<article class="yarn"><div class="yarn-visual"><img src="https://upforme.ru/uploads/001c/7d/92/4/t653912.png" alt="Большой клубочек" width="170" height="170" loading="lazy"></div><h2><span class="level">Одно задание на выбор</span>Большой клубочек</h2><ol>
+<li>Прийти на <a href="https://safespace.rusff.me/viewforum.php?id=7" target="_blank" rel="noopener noreferrer">киновечер</a> или устроить его</li>
+<li><a href="https://safespace.rusff.me/viewtopic.php?id=885" target="_blank" rel="noopener noreferrer">Выяснить отношения</a> с тем, с кем ещё не выяснял</li>
+<li>Написать заявку в <a href="https://safespace.rusff.me/viewtopic.php?id=5" target="_blank" rel="noopener noreferrer">нужные</a>, <a href="https://safespace.rusff.me/viewtopic.php?id=17" target="_blank" rel="noopener noreferrer">хотим видеть</a> или <a href="https://safespace.rusff.me/viewtopic.php?id=243" target="_blank" rel="noopener noreferrer">гештальтошную</a></li>
+<li>Написать за день два поста разным игрокам</li>
+<li>Открыть эпизод с тем, с кем ещё не играл за персонажа</li>
+<li>Написать пост в эпизод, в который не писал дольше всего</li>
+</ol></article>
+</div></section><p class="note">Нажмите на вещь, чтобы открыть и скопировать шаблон заявки.</p><noscript><p>Для переключения вкладок и копирования шаблонов включите JavaScript.</p></noscript></main><dialog id="image-dialog" aria-labelledby="image-title"><h2 id="image-title"></h2><img id="large-image" alt=""><form method="dialog"><button>Закрыть</button></form></dialog><div class="status" role="status" aria-live="polite"></div>
+<script>
+const tabs=[...document.querySelectorAll('[role="tab"]')];
+function activateTab(tab){tabs.forEach(t=>{const active=t===tab;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!active});syncHeight()}
+tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>activateTab(tab));tab.addEventListener('keydown',e=>{let next;if(e.key==='ArrowRight'||e.key==='ArrowLeft')next=tabs[(i+1)%tabs.length];if(e.key==='Home')next=tabs[0];if(e.key==='End')next=tabs[tabs.length-1];if(next){e.preventDefault();activateTab(next);next.focus()}})});
+document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.querySelectorAll('[data-category]').forEach(c=>{c.hidden=button.dataset.filter!=='all'&&c.dataset.category!==button.dataset.filter});syncHeight()}));
+let statusTimer;function notify(text){const box=document.querySelector('.status');box.textContent=text;clearTimeout(statusTimer);statusTimer=setTimeout(()=>box.textContent='',3500)}
+async function copyCode(button){const area=document.getElementById(button.dataset.copy);let copied=false;try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(area.value);copied=true}}catch(e){}if(!copied){area.focus();area.select();area.setSelectionRange(0,area.value.length);try{copied=document.execCommand('copy')}catch(e){}}if(copied){notify('BBCode скопирован');const label=button.textContent;button.textContent='Скопировано ✓';setTimeout(()=>button.textContent=label,1800)}else{area.focus();area.select();notify('Выделенный шаблон можно скопировать вручную: Ctrl+C или через меню.')}}
+document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>copyCode(b)));
+document.querySelectorAll('.grid').forEach(grid=>grid.addEventListener('toggle',event=>{if(event.target.open)grid.querySelectorAll('details[open]').forEach(other=>{if(other!==event.target)other.open=false});syncHeight()},true));
+const dialog=document.getElementById('image-dialog');document.querySelectorAll('[data-image]').forEach(b=>b.addEventListener('click',()=>{document.getElementById('image-title').textContent=b.dataset.name;const img=document.getElementById('large-image');img.src=b.dataset.image;img.alt=b.dataset.name;dialog.showModal()}));dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
+let heightFrame;function syncHeight(){cancelAnimationFrame(heightFrame);heightFrame=requestAnimationFrame(()=>{const main=document.querySelector('.page');const style=getComputedStyle(main);const height=Math.ceil(main.getBoundingClientRect().height+parseFloat(style.marginTop)+parseFloat(style.marginBottom)+2);try{if(window.frameElement){window.frameElement.style.height=height+'px';window.frameElement.setAttribute('height',String(height))}}catch(e){}if(window.parent!==window)window.parent.postMessage({type:'knitting-layout-height',height},'*')})}
+new ResizeObserver(syncHeight).observe(document.querySelector('.page'));window.addEventListener('load',syncHeight);syncHeight();
+</script></body></html>
